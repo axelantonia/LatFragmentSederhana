@@ -62,6 +62,12 @@ class fSatu : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnOpenFSatu = view.findViewById<Button>(R.id.btnOpenFSatu)
+        val fragmentDua = fDua()
+        val dataKirim = Bundle().apply {
+            putString("Nama", "Andi")
+            putString("Alamat", "Siwalankerto")
+        }
+
 
         btnOpenFSatu.setOnClickListener {
             val fragmentManager = parentFragmentManager
