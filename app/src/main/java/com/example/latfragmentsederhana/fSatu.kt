@@ -58,22 +58,24 @@ class fSatu : Fragment() {
             }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val btnOpenFSatu = view.findViewById<Button>(R.id.btnOpenFSatu)
+
         val fragmentDua = fDua()
+
         val dataKirim = Bundle().apply {
             putString("Nama", "Andi")
             putString("Alamat", "Siwalankerto")
         }
 
+        fragmentDua.arguments = dataKirim
 
         btnOpenFSatu.setOnClickListener {
             val fragmentManager = parentFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
-
-            val fragmentDua = fDua()
 
             fragmentTransaction.replace(
                 R.id.fragment_container,
